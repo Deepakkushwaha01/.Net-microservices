@@ -1,0 +1,6 @@
+@Mst.Identity.Services.API_HostAddress = http://localhost:5034
+
+GET {{Mst.Identity.Services.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
