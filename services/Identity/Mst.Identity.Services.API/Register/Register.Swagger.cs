@@ -1,9 +1,8 @@
-using Microsoft.OpenApi.Models;
-using Mst.Identity.Services.API.Settings;
-
-namespace Mst.Identity.Services.API.Extensions
+namespace Mst.Identity.Services.API.Registers
 {
-    public static class SwaggerServiceExtensions
+    using Microsoft.OpenApi.Models;
+    using Mst.Identity.Services.API.Settings;
+    public static partial class Register
     {
         public static IServiceCollection AddSwaggerDocumentation(this IServiceCollection services, IConfiguration configuration)
         {

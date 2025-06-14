@@ -26,8 +26,8 @@ ScaffoldingReadMe.txt
 *.db
 *.db-journal
 *.log
-.env
-.env.*
+# .env
+# .env.*
 secrets.json
 
 # dotnet format logs
