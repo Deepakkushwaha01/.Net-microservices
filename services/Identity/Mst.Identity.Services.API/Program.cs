@@ -1,8 +1,9 @@
+
+
 namespace Mst.Identity.Services.API
 {
-    using Mst.Identity.Services.API.Extensions;
-    using Mst.Identity.Services.API.Settings;
-    using Swashbuckle.AspNetCore.SwaggerUI;
+    using External.API.Registers;
+    using Mst.Identity.Services.API.Registers;
     public class Program
     {
         public static void Main(string[] args)
@@ -24,6 +25,8 @@ namespace Mst.Identity.Services.API
         {
             builder.Services.AddControllers();
             builder.Services.AddSwaggerDocumentation(builder.Configuration);
+            builder.Services.RegisterDatabase(builder.Configuration);
+
             return builder.Build();
         }
 
@@ -31,6 +34,7 @@ namespace Mst.Identity.Services.API
         {
             app.MapGet("/", () => Results.Ok("Welcome to Identity Service API"));
             app.MapControllers();
+            app.UseDatabaseHealthCheck();
             app.UseSwaggerDocumentation(app.Configuration);
             app.Run();
         }
