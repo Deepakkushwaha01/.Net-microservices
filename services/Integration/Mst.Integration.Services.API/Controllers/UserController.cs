@@ -1,3 +1,4 @@
+using External.API.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Mst.Integration.Services.API.Models;
 
@@ -5,7 +6,7 @@ namespace Mst.Integration.Services.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    public class UserController : ExtendedApiController
     {
         private static readonly List<UserDto> Users = new();
 
