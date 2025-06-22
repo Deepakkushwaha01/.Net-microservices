@@ -4,8 +4,8 @@ namespace Mst.Core.Persistence.CustomerReview.Entity
 {
     public class CustomerReview : TrackedEntity
     {
-        required public string CustomerName { get; set; }
-        required public string ReviewText { get; set; }
+        public string CustomerName { get; protected internal set; } = string.Empty;
+        public string ReviewText { get; protected internal set; } = string.Empty;
         public int Rating { get; set; } // Assuming a rating scale of 1-5
 
         public static CustomerReview Create(

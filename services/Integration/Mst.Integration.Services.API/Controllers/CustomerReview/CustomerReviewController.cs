@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Mst.API.Statics;
 using Mst.Core.Contracts.Integrations.Requests;
+using Mst.Core.Queries.Integration;
 
 namespace Mst.Integration.Services.API.Controllers.CustomerReview
 {
@@ -24,6 +25,13 @@ namespace Mst.Integration.Services.API.Controllers.CustomerReview
         {
 
             return OkOrError(await _mediator.Send(new SaveCustomerReviewCommand(request)));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllCustomerReview()
+        {
+            return OkOrError(await _mediator.Send(new CustomerReviewQuery()));
+
         }
     }
 }
