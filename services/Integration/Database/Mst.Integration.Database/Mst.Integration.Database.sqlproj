@@ -29,6 +29,7 @@
     <Folder Include="Integration" />
     <Folder Include="Integration\Seed" />
     <Folder Include="Integration\Tables" />
+    <Folder Include="Integration\Schema.sql" />
     <Folder Include="Tables" />
     <Folder Include="Views" />
   </ItemGroup>

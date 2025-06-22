@@ -3,6 +3,7 @@
 namespace Mst.Integration.Services.API
 {
     using External.API.Registers;
+    using Mst.API.Registers;
     using Mst.Integration.Services.API.Registers;
 
     public class Program
@@ -24,9 +25,12 @@ namespace Mst.Integration.Services.API
 
         public static WebApplication BuildApplication(WebApplicationBuilder builder)
         {
+            builder.Services.RegisterVersioning();
             builder.Services.AddControllers();
             builder.Services.AddSwaggerDocumentation(builder.Configuration);
             builder.Services.RegisterDatabase(builder.Configuration);
+            builder.Services.RegisterMediatR();
+            builder.Services.RegisterServices();
 
             return builder.Build();
         }

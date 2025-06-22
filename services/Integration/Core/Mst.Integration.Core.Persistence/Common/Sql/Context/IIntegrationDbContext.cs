@@ -1,4 +1,4 @@
-namespace External.Core.Persistence.Common.Sql.Context
+namespace Mst.Core.Persistence.Common.Sql.Context
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.ChangeTracking;

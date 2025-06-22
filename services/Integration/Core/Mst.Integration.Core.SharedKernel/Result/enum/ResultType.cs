@@ -1,4 +1,4 @@
-namespace Mst.Common.Results;
+namespace Mst.SharedKernel.Common.Results;
 
 public enum ResultType : short
 {

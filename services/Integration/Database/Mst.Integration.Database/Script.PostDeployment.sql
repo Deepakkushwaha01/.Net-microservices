@@ -1,4 +1,4 @@
 IF ('$(LoadTestSeedData)' = 'Y')
 BEGIN
-	:r .\Integration\Seed\User.seed.data.sql
+	:r .\Integration\Seed\CustomerReview.seed.data.sql
 END
