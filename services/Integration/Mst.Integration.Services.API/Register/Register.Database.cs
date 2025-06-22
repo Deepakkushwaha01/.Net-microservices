@@ -1,7 +1,8 @@
 using External.API.Settings;
-using External.Core.Persistence.Common.Sql.Context;
 using Integration.Core.Persistence.Common.Sql.Context;
 using Microsoft.EntityFrameworkCore;
+using Mst.Core.Persistence.Common.Sql.Context;
+using Mst.Core.Queries.Infrastructure.Context;
 
 namespace External.API.Registers
 {
@@ -34,7 +35,7 @@ namespace External.API.Registers
 
         private static IServiceCollection RegisterReadonlyIntegrationDb(this IServiceCollection services, ConnectionStringsSettings settings)
         {
-            services.AddScoped<IIntegrationDbContext, IntegrationDbContext>().AddDbContext<IntegrationDbContext>(options =>
+            services.AddScoped<IReadonlyIntegrationDbContext, ReadonlyIntegrationDbContext>().AddDbContext<ReadonlyIntegrationDbContext>(options =>
                     {
                         options.UseSqlServer(settings.IntegrationSqlDb,
                         sqlServerOptionsAction: sqlOptions =>
