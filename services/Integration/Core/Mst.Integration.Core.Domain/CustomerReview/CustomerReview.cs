@@ -1,7 +1,7 @@
 namespace Mst.Core.Domain.CustomerReview
 {
+    using Mst.Common.Packages.Results;
     using Mst.Core.Domain.Common.Entities;
-    using Mst.SharedKernel.Common.Results;
     using Mst.SharedKernel.Statics;
 
     /// <summary>

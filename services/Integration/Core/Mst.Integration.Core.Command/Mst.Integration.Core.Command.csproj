@@ -9,8 +9,9 @@
     <ItemGroup>
   <ProjectReference Include="..\Mst.Integration.Core.SharedKernel\Mst.Integration.Core.SharedKernel.csproj" />
     <ProjectReference Include="..\Mst.Integration.Core.Contracts\Mst.Integration.Core.Contracts.csproj" />
-        <ProjectReference Include="..\Mst.Integration.Core.Domain\Mst.Integration.Core.Domain.csproj" />
-          <ProjectReference Include="..\Mst.Integration.Core.Persistence\Mst.Integration.Core.Persistence.csproj" />
+  <ProjectReference Include="..\Mst.Integration.Core.Domain\Mst.Integration.Core.Domain.csproj" />
+    <ProjectReference Include="..\Mst.Integration.Core.Persistence\Mst.Integration.Core.Persistence.csproj" />
+      <ProjectReference Include="..\Mst.Common.Packages\Mst.Common.Packages.csproj" />
 </ItemGroup>
 
     <ItemGroup>

@@ -1,6 +1,6 @@
+using Mst.Common.Packages.Results;
 using Mst.Core.Contracts.Common.UnitOfWork;
 using Mst.Core.Persistence.Common.Sql.Context;
-using Mst.SharedKernel.Common.Results;
 
 namespace External.Core.Persistence.Common.UnitOfWork
 {

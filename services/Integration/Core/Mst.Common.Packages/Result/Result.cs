@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Mst.SharedKernel.Common.Results;
+namespace Mst.Common.Packages.Results;
 
 public class Result : ResultCommonLogic
 {

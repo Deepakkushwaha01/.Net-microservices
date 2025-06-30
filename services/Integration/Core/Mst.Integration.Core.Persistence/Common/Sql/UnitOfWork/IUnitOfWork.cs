@@ -1,7 +1,7 @@
 namespace Mst.Core.Contracts.Common.UnitOfWork
 {
     using System.Threading.Tasks;
-    using Mst.SharedKernel.Common.Results;
+    using Mst.Common.Packages.Results;
 
     public interface IUnitOfWork
     {

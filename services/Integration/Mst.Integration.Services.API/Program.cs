@@ -31,6 +31,7 @@ namespace Mst.Integration.Services.API
             builder.Services.RegisterDatabase(builder.Configuration);
             builder.Services.RegisterMediatR();
             builder.Services.RegisterServices();
+            builder.Services.RegisterCors();
 
             return builder.Build();
         }
@@ -41,6 +42,7 @@ namespace Mst.Integration.Services.API
             app.MapControllers();
             app.UseDatabaseHealthCheck();
             app.UseSwaggerDocumentation(app.Configuration);
+            app.UseCorsMiddleware();
             app.Run();
         }
     }

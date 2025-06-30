@@ -1,4 +1,4 @@
-using Mst.SharedKernel.Common.Results;
+using Mst.Common.Packages.Results;
 
 namespace Mst.Integration.Core.Persistence.CustomerReview.Repositories
 {

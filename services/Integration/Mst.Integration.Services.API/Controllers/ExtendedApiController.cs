@@ -3,7 +3,7 @@ namespace External.API.Controllers
     using System.Net;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Primitives;
-    using Mst.SharedKernel.Common.Results;
+    using Mst.Common.Packages.Results;
 
     public class ExtendedApiController : ControllerBase
     {

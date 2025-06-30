@@ -2,6 +2,7 @@ using External.API.Controllers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Mst.API.Statics;
+using Mst.Common.Packages.Dtos;
 using Mst.Core.Contracts.Integrations.Requests;
 using Mst.Core.Queries.Integration;
 
@@ -28,9 +29,9 @@ namespace Mst.Integration.Services.API.Controllers.CustomerReview
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllCustomerReview()
+        public async Task<IActionResult> GetAllCustomerReview([FromQuery] PaginatedRequest request)
         {
-            return OkOrError(await _mediator.Send(new CustomerReviewQuery()));
+            return OkOrError(await _mediator.Send(new CustomerReviewQuery(request)));
 
         }
     }

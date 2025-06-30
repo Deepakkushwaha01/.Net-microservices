@@ -1,9 +1,9 @@
 using MediatR;
+using Mst.Common.Packages.Results;
 using Mst.Core.Contracts.Common.UnitOfWork;
 using Mst.Core.Contracts.Integrations.Requests;
 using Mst.Core.Domain.CustomerReview;
 using Mst.Integration.Core.Persistence.CustomerReview.Repositories;
-using Mst.SharedKernel.Common.Results;
 
 public record SaveCustomerReviewCommand(CustomerReviewRequestDto configuration) : IRequest<Result>
 {

@@ -3,9 +3,9 @@
 namespace Mst.Integration.Core.Persistence.Common.Sql.Repository
 {
     using Microsoft.EntityFrameworkCore;
+    using Mst.Common.Packages.Results;
     using Mst.Core.Persistence.Common.Sql.Context;
     using Mst.Integration.Core.Persistence.Common.Sql.Entity;
-    using Mst.SharedKernel.Common.Results;
 
     public class Repository<TAggregate> : IRepository<TAggregate> where TAggregate : Entity
     {

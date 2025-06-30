@@ -3,13 +3,20 @@ namespace Mst.Core.Queries.Integration
     using MediatR;
     using Mst.Core.Queries.Entities;
     using Mst.Core.Queries.Infrastructure.Context;
-    using Mst.SharedKernel.Common.Results;
     using Microsoft.EntityFrameworkCore;
     using Mst.Core.Contracts.Integrations.Responses;
-    using Mst.SharedKernel.Common.Dtos;
+    using Mst.Common.Packages.Results;
+    using Mst.Common.Packages.Dtos;
+    using Mst.Common.Packages.Extensions;
 
     public class CustomerReviewQuery : IRequest<Result<PagedResponse<CustomerReviewResponseDto>>>
     {
+        public PaginatedRequest Request { get; }
+
+        public CustomerReviewQuery(PaginatedRequest request)
+        {
+            Request = request;
+        }
     }
     public class CustomerReviewQueryHandler(
         IReadonlyIntegrationDbContext _integrationDbContext
@@ -17,10 +24,13 @@ namespace Mst.Core.Queries.Integration
     {
         public async Task<Result<PagedResponse<CustomerReviewResponseDto>>> Handle(CustomerReviewQuery request, CancellationToken cancellationToken)
         {
-            var customerReviews = await _integrationDbContext.AllOf<CustomerReview>().ToListAsync(cancellationToken);
+            IQueryable<CustomerReview> query = _integrationDbContext.AllOf<CustomerReview>();
 
+            int totalRecords = await query.CountAsync(cancellationToken);
 
-            var mapped = customerReviews.Select(x => new CustomerReviewResponseDto
+            query = query.ApplyPagination(request.Request);
+
+            List<CustomerReviewResponseDto> mapped = await query.Select(x => new CustomerReviewResponseDto
             {
                 Id = x.Id,
                 Uid = x.Uid,
@@ -28,10 +38,11 @@ namespace Mst.Core.Queries.Integration
                 ReviewText = x.ReviewText,
                 Rating = x.Rating,
                 CreatedOn = x.CreatedOn
-            }).ToList();
+            }).ToListAsync(cancellationToken);
 
             return Result.Ok(new PagedResponse<CustomerReviewResponseDto>(
-                totalRecords: mapped.Count,
+                hasNextPage: request.Request.Limit + request.Request.Offset < totalRecords,
+                totalRecords: totalRecords,
                 totalDisplayRecords: mapped.Count,
                 data: mapped
             ));

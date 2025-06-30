@@ -1,4 +1,4 @@
-namespace Mst.SharedKernel.Common.Results;
+namespace Mst.Common.Packages.Results;
 
 public class Result<T> : ResultCommonLogic
 {

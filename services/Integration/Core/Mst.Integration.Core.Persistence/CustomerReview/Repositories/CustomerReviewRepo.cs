@@ -1,10 +1,10 @@
 namespace Mst.Integration.Core.Persistence.CustomerReview.Repositories
 {
+    using Mst.Common.Packages.Results;
     using Mst.Core.Persistence.Common.Sql.Context;
     using Mst.Core.Persistence.CustomerReview.Entity;
     using Mst.Core.Persistence.CustomerReview.Factory;
     using Mst.Integration.Core.Persistence.Common.Sql.Repository;
-    using Mst.SharedKernel.Common.Results;
 
     /// <summary>
     /// Repository for managing customer reviews.

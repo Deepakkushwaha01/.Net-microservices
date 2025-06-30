@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Net;
 
-namespace Mst.SharedKernel.Common.Results;
+namespace Mst.Common.Packages.Results;
 
 [DebuggerStepThrough]
 public abstract class ResultCommonLogic
